@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul.second {
+            list-style-type: circle;
+        }
+        ul.third {
+            list-style-type: square;
+        }
+        ul.fourth {
+            list-style-type: none;
+        }
+        ul.inside {
+            list-style-position: inside;
+        }
+        ul.outside {
+            list-style-position: outside;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Disk bullet</li>
+        <li>Another item</li>
+    </ul>
+    <ul class="second">
+        <li>Circle bullet</li>
+        <li>Another item</li>
+    </ul>
+    <ul class="third">
+        <li>Square bullet</li>
+        <li>Another item</li>
+    </ul>
+    <ul class="fourth">
+        <li>No bullet</li>
+        <li>Another item</li>
+    </ul>
+    <ul class="outside">
+        <li>Bullet outside</li>
+        <li>Another item
+            <ul class="inside">
+                <li>Bullet inside</li>
+                <li>Another item</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
