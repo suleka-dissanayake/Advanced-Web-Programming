@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Greeting</h2>
+    <script>
+      // Asking name from user
+      let name = prompt("Enter your name:");
+      alert("Hello " + name + "! Welcome to JavaScript");
+
+      // Sum of two numbers
+      let inpt1 = Number(prompt("Enter first number:"));
+      let inpt2 = Number(prompt("Enter second number:"));
+      let tot = inpt1 + inpt2;
+      alert(`Sum of ${inpt1} and ${inpt2} is ${tot}`);
+
+      // Ask the user for a number and calculate square
+      let input = prompt("Enter a number to square:");
+      let number = Number(input);
+      let square = number * number;
+      alert("The square of " + number + " is " + square);
+
+      // Defining user is an adult or not
+      let age = Number(prompt("Enter your age:"));
+      if (age >= 18) {
+        alert("You're an adult");
+      } else {
+        alert("You're not an adult");
+      }
+    </script>
+  </body>
+</html>
