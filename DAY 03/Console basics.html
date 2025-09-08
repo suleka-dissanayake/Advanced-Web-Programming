@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        
+        // Declaration
+        function greet(){
+            console.log("Welcome to JavaScript!");
+        }
+        greet();
+
+        // With parameters
+        function sayHello(name){
+            console.log(`Hello ${name}!`);
+        }
+        sayHello("Suleka");
+        sayHello("John");
+
+        // With return value
+        function add(a, b){
+            return a + b;
+        }
+        console.log(`Sum is ${add(45, 55)}`);
+
+        // Anonymous function
+        let multiply = function(x, y){
+            return x * y;
+        }
+        console.log(`Product is ${multiply(4, 5)}`);
+
+        // Arrow function
+        let square = (n) => n * n;
+        console.log(`Square value is ${square(5)}`);
+
+        // Default parameter
+        function greetUser(name = "Guest"){
+            console.log(`Hello ${name}`);
+        }
+        greetUser("John");
+        greetUser();
+
+        // Rest parameters
+        function sumAll(...numbers){
+            let total = 0;
+            for(let num of numbers){
+                total += num;
+            }
+            return total;
+        }
+        console.log(`Sum of all numbers is ${sumAll(1, 2, 3, 4, 5)}`);
+
+        // IIFE
+        
+    </script>
+</body>
+</html>

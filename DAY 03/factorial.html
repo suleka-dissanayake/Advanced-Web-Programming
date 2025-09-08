@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            function calculateFactorial(n) {
+                let factorial = 1;
+                while (n > 1) {
+                    factorial *= n;
+                    n--;
+                }
+                return factorial;
+            }
+
+            let num = Number(prompt("Enter number: "));
+            let factorial = calculateFactorial(num);
+            alert(`Factorial of ${num} is ${factorial}`);
+        </script>
+    </body>
+</html>
