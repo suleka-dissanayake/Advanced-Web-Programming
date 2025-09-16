@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <button id="btn">Click Me</button>
+
+        <script>
+            let btn = document.getElementById("btn");
+
+            btn.onclick = function(){
+                alert("First function");
+            }
+
+            btn.onclick = function(){
+                alert("Second function");
+            }
+
+            // second one overrides the first function
+        </script>
+    </body>
+</html>
