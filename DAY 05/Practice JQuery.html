@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <style>
+            .highlight{color: red;}
+        </style>
+    </head>
+    <body>
+        <h1 id="title">Welcome!</h1>
+        <p class="note">This is a note</p>
+        <p class="note">Another note here</p>
+        <p>Just a normal paragraph</p>
+        <button id="btn">Click Me</button>
+
+        <script>
+            $(document).ready(function(){
+                $("#title").text("Hello from jquery!");
+                $(".note").addClass("highlight");
+                $("p").append("!@#");
+            });
+        </script>
+    </body>
+</html>
