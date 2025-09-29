@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grades</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: center;
+        }
+        .highlight {
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <table id="gradesTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Science</th>
+                <th>English</th>
+                <th>Math</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>85</td>
+                <td>88</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>70</td>
+                <td>75</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>Charlie</td>
+                <td>95</td>
+                <td>92</td>
+                <td>96</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            let maxAvg = 0;
+            let topRow;
+
+            $("#gradesTable tbody tr").each(function() {
+                let scores = $(this).find("td:gt(0)").map(function() {
+                    return parseInt($(this).text());
+                }).get();
+
+                let avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+
+                if (avg > maxAvg) {
+                    maxAvg = avg;
+                    topRow = $(this);
+                }
+            });
+
+            if (topRow) {
+                topRow.addClass("highlight");
+            }
+        });
+    </script>
+</body>
+</html>

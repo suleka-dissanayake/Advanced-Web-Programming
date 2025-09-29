@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Button and Box Toggle</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #colorButton {
+      padding: 10px 20px;
+      border: 1px;
+    }
+
+    #toggleButton {
+      padding: 10px 20px;
+      border: 1px;
+      margin-left: 10px;
+    }
+
+    #box {
+      width: 400px;
+      height: 400px;
+      background-color: lightblue;
+      margin-top: 20px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+    <div id="box"></div>
+  <button id="colorButton">Change Color</button>
+  <button id="toggleButton">Toggle Box</button>
+
+  <script>
+    $(document).ready(function() {
+  
+      $('#colorButton').click(function() {
+        $('#box').css('background-color', 'green');
+      });
+  
+      $('#toggleButton').click(function() {
+        $('#box').toggle();
+      });
+  
+    });
+  </script>
+
+</body>
+</html>
