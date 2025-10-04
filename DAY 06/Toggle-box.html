@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercise - jQuery Box</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #box {
+      width: 150px;
+      height: 150px;
+      background: lightblue;
+      margin: 20px;
+      text-align: center;
+      line-height: 150px;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery Exercise</h2>
+  
+  <div id="box">Box</div>
+  
+  <button id="colorBtn">Change Color</button>
+  <button id="toggleBtn">Toggle Box</button>
+
+  <script>
+    // Array of colors to cycle through
+    let colors = ["red", "green", "blue", "orange", "purple"];
+    let index = 0;
+
+    // Change background color on button click
+    $("#colorBtn").click(function(){
+      $("#box").css("background", colors[index]);
+      index = (index + 1) % colors.length;
+    });
+
+    // Toggle visibility with animation
+    $("#toggleBtn").click(function(){
+      $("#box").fadeToggle(); // or use .slideToggle()
+    });
+
+    // Reset to original color on double-click
+    $("#box").dblclick(function(){
+      $(this).css("background", "lightblue");
+    });
+  </script>
+
+</body>
+</html>

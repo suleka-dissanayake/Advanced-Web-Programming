@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Effects Demo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #box {
+      width: 150px;
+      height: 150px;
+      background: lightblue;
+      margin: 20px;
+      text-align: center;
+      line-height: 150px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery Effects Demo</h2>
+
+  <!-- Hide / Show / Toggle -->
+  <button id="hideBtn">Hide</button>
+  <button id="showBtn">Show</button>
+  <button id="toggleBtn">Toggle</button>
+  <div id="box">Box</div>
+
+  <!-- Fade Effects -->
+  <button id="fadeInBtn">Fade In</button>
+  <button id="fadeOutBtn">Fade Out</button>
+  <button id="fadeToggleBtn">Fade Toggle</button>
+  <button id="fadeToBtn">Fade To 50%</button>
+
+  <!-- Slide Effects -->
+  <p>
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+  </p>
+  <div id="panel" style="display:none; background:lightgreen; padding:20px;">
+    This is a sliding panel!
+  </div>
+
+  <!-- Animate -->
+  <p>
+    <button id="animateBtn">Animate Box</button>
+  </p>
+
+<script>
+  // Hide / Show / Toggle
+  $("#hideBtn").click(function(){
+    $("#box").hide();
+  });
+
+  $("#showBtn").click(function(){
+    $("#box").show();
+  });
+
+  $("#toggleBtn").click(function(){
+    $("#box").toggle();
+  });
+
+  // Fade Effects
+  $("#fadeInBtn").click(function(){
+    $("#box").fadeIn();
+  });
+
+  $("#fadeOutBtn").click(function(){
+    $("#box").fadeOut();
+  });
+
+  $("#fadeToggleBtn").click(function(){
+    $("#box").fadeToggle();
+  });
+
+  $("#fadeToBtn").click(function(){
+    $("#box").fadeTo("slow", 0.5); // speed, opacity
+  });
+
+  // Slide Effects
+  $("#slideDownBtn").click(function(){
+    $("#panel").slideDown();
+  });
+
+  $("#slideUpBtn").click(function(){
+    $("#panel").slideUp();
+  });
+
+  $("#slideToggleBtn").click(function(){
+    $("#panel").slideToggle();
+  });
+
+  // Animate
+  $("#animateBtn").click(function(){
+    $("#box").animate({
+      width: "300px",
+      height: "300px",
+      opacity: 0.5,
+      marginLeft: "50px"
+    }, 1000); // duration 1 second
+  });
+</script>
+
+</body>
+</html>
