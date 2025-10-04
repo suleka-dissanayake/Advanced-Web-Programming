@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Built-in JS Functions Example</title>
+</head>
+<body>
+    <h1>JavaScript Built-in Functions Demo</h1>
+
+    <div id="output"></div>
+
+    <script>
+        let output = "";
+
+        // --- Number functions ---
+        let num = 15.678;
+        output += "<h3>Number Functions:</h3>";
+        output += "Original number: " + num + "<br>";
+        output += "Rounded: " + Math.round(num) + "<br>";
+        output += "Square root: " + Math.sqrt(num) + "<br>";
+        output += "Random number (0-1): " + Math.random().toFixed(2) + "<br>";
+        //decimal number between 0 and 1, never exactly 1
+
+        // --- String functions ---
+        let str = "Hello World";
+        output += "<h3>String Functions:</h3>";
+        output += "Original string: " + str + "<br>";
+        output += "Uppercase: " + str.toUpperCase() + "<br>";
+        output += "Lowercase: " + str.toLowerCase() + "<br>";
+        output += "Substring (0,5): " + str.substring(0,5) + "<br>";
+        //string.substring(startIndex, endIndex)(index 5 is space)
+
+        // --- Array functions ---
+        let arr = [10, 20, 30, 40];
+        output += "<h3>Array Functions:</h3>";
+        output += "Original array: " + arr + "<br>";
+        arr.push(50); // add element
+        output += "After push(50): " + arr + "<br>";
+        arr.pop(); // remove last element
+        output += "After pop(): " + arr + "<br>";
+        output += "Array length: " + arr.length + "<br>";
+
+        // --- Date functions ---
+        let today = new Date();
+        output += "<h3>Date Functions:</h3>";
+        output += "Today: " + today.toDateString() + "<br>";
+        output += "Time: " + today.toTimeString() + "<br>";
+
+        // --- Object functions ---
+        let person = {name:"Viththaky", age:27};
+        //creates an object named person with two properties: name and age
+        output += "<h3>Object Functions:</h3>";
+        output += "Person object: " + JSON.stringify(person) + "<br>";
+        //JavaScript object into a JSON string.
+        output += "Keys: " + Object.keys(person) + "<br>";
+        output += "Values: " + Object.values(person) + "<br>";
+
+        // Display all output
+        document.getElementById("output").innerHTML = output;
+    </script>
+</body>
+</html>

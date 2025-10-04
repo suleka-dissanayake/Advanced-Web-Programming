@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Form Validation</h2>
+
+    <form id="myForm">
+        Name: <input type="text" id="name"><br><br>
+        Email: <input type="text" id="email"><br><br>
+        Age: <input type="number" id="age"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event){
+            const name = document.getElementById("name").value; // wont be reassigned
+            const email = document.getElementById("email").value;
+            const age = document.getElementById("age").value;
+            let messages = []; //empty array
+
+            // 1. Name validation: not empty
+            if(name == ""){
+                messages.push("Name is required.");
+                //adds an error message to the messages array
+            }
+
+            // 2. Email validation: must include '@'
+            if(!email.includes("@")){
+                messages.push("Email must contain '@'.");
+            }
+
+            // 3. Age validation: must be >= 18
+            if(age == "" || age < 18){
+                messages.push("Age must be at least 18.");
+            }
+
+            // If there are errors, prevent form submission
+            if(messages.length > 0){
+                event.preventDefault();
+                alert(messages.join("\n")); 
+                //Shows all error messages in one popup, each on a new line
+            }
+        });
+    </script>
+</body>
+</html>

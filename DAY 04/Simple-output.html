@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <select id="selectBox">
+        <option value="JS">JavaScript</option>
+        <option value="PY">Python</option>
+        <option value="JAVA">Java</option>
+    </select>
+
+    <p id="chosen"></p>
+
+    <script>
+        document.getElementById("selectBox").addEventListener("change", function() {
+            document.getElementById("chosen").innerHTML = "You selected: " + this.value;
+        });
+    </script>
+</body>
+</html>
+
+
