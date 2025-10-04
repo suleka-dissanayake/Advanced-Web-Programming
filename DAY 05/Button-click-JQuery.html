@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>With jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!--Loads the jQuery library from a CDN (so we can use $() and jQuery functions)-->
+  <!--The <head> loads before the body, so by the time your page shows, jQuery is already available-->
+  </head>
+<body>
+  <p id="demo">Hello</p>
+  <button id="btn">Click Me</button>
+
+  <script>
+    $("#btn").click(function() {
+      $("#demo").text("Hello from jQuery!");
+    });
+    //always use the $ sign to start : $ sign is just a shortcut for jQuery.
+    //$("#btn") - Selects the button with id btn.
+  </script>
+</body>
+</html>

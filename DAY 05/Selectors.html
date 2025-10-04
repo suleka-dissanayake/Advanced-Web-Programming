@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Basic Selectors</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .highlight { color: red; }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Welcome!</h1>
+  <p class="note">This is a note.</p>
+  <p class="note">Another note here.</p>
+  <p>Just a normal paragraph.</p>
+  <button id="btn">Click Me</button>
+  
+<!--It tells jQuery:
+Wait until the whole webpage (all HTML elements) is fully loaded, then run the code inside
+-->
+
+  <script>
+    $(document).ready(function(){
+      //ID selector: change the heading text
+      $("#title").text("Hello from jQuery!");
+
+      //Class selector: make all notes red
+      $(".note").addClass("highlight");
+
+      // Tag selector: change text of all <p> elements
+      $("p").append("!@#");
+    });
+  </script>
+
+</body>
+</html>

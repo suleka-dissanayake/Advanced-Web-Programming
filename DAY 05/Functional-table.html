@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attribute Selectors Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .highlight { border: 2px solid red; }
+    .student { font-weight: bold; }
+    .hover-display { margin-top: 10px; font-style: italic; }
+    .light-blue { background-color: lightblue; }
+    .light-green { background-color: lightgreen; }
+    .gray-bg { background-color: #f0f0f0; }
+  </style>
+</head>
+<body>
+
+  <input type="text" name="username" placeholder="Username">
+  <input type="text" name="email" placeholder="Email">
+  <a href="http://example.com">Example Link</a>
+  <a href="http://google.com">Google Link</a>
+
+  <button id="btn">Click Me</button>
+
+  <hr>
+
+  <table border="1" id="student-table">
+    <tr>
+      <th>Name</th>
+      <th>Score 1</th>
+      <th>Score 2</th>
+    </tr>
+    <tr>
+      <td class="student">Alice</td>
+      <td class="score">85</td>
+      <td class="score">92</td>
+    </tr>
+    <tr>
+      <td class="student">Bob</td>
+      <td class="score">88</td>
+      <td class="score">95</td>
+    </tr>
+    <tr>
+      <td class="student">Charlie</td>
+      <td class="score">91</td>
+      <td class="score">89</td>
+    </tr>
+  </table>
+
+  <p class="hover-display">Hover over a student name to see it here.</p>
+
+  <script>
+    $("#btn").click(function(){
+      // Highlight email input
+      $('input[name="email"]').addClass("highlight");
+
+      // Increase font size of links starting with http://
+      $('a[href^="http://"]').css("font-size", "20px");
+    });
+
+    // Make all student names bold using class selector .student
+    $('.student').addClass('student');
+
+    // Change first row (header) background to light gray
+    $('#student-table tr:first').addClass('gray-bg');
+
+    // Highlight all score cells > 90 in light green
+    $('.score').each(function(){
+      if (parseInt($(this).text()) > 90) {
+        $(this).addClass('light-green');
+      }
+    });
+
+    // Show student name in paragraph on hover and reset on mouse leave
+    $('.student').hover(
+      function() {
+        $('.hover-display').text("Student: " + $(this).text());
+      },
+      function() {
+        $('.hover-display').text("Hover over a student name to see it here.");
+      }
+    );
+
+    // Change background of score cell when clicked
+    $('.score').click(function(){
+      $(this).toggleClass('light-blue');
+    });
+
+    // Alert average score on double-clicking student name
+    $('.student').dblclick(function(){
+      let $row = $(this).closest('tr');
+      let scores = $row.find('.score').map(function(){ return parseInt($(this).text()); }).get();
+      let avg = scores.reduce((a,b) => a + b, 0) / scores.length;
+      alert("Average score of " + $(this).text() + ": " + avg.toFixed(2));
+    });
+  </script>
+
+</body>
+</html>

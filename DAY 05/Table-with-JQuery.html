@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Table Exercise</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+      text-align: center;
+    }
+    .highlight { background-color: yellow; }
+    #message { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Student Grades</h2>
+
+  <table id="gradesTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="student">Alice</td>
+        <td>85</td>
+        <td>90</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td class="student">Bob</td>
+        <td>70</td>
+        <td>75</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td class="student">Charlie</td>
+        <td>95</td>
+        <td>92</td>
+        <td>96</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p id="message">Hover over a student name to see their details.</p>
+
+  <script>
+    $(document).ready(function(){
+
+      // 1. Select all student names and make text bold
+      $(".student").css("font-weight", "bold");
+
+      // 2. Select first row and change background
+      $("#gradesTable tbody tr:first").css("background-color", "#f0f0f0");
+
+      // 3. Highlight cells with score greater than 90
+      $("#gradesTable td").each(function(){
+        var score = parseInt($(this).text());
+        if(score > 90){
+          $(this).css("background-color", "lightgreen");
+        }
+      });
+
+      // 4. Hover over student name
+      $(".student").mouseenter(function(){
+        var name = $(this).text();
+        $("#message").text("Student: " + name);
+      });
+
+      $(".student").mouseleave(function(){
+        $("#message").text("Hover over a student name to see their details.");
+      });
+
+      // 5. Click on a score cell
+      $("#gradesTable td").not(".student").click(function(){
+        $(this).css("background-color", "lightblue");
+      });
+
+      // 6. Double-click student name to alert average
+      $(".student").dblclick(function(){
+        var row = $(this).closest("tr"); // get the row
+        var total = 0;
+        var count = 0;
+        row.find("td").not(".student").each(function(){
+          total += parseInt($(this).text());
+          count++;
+        });
+        var avg = (total / count).toFixed(2);
+        alert("Average score of " + $(this).text() + ": " + avg);
+      });
+
+    });
+  </script>
+
+</body>
+</html>

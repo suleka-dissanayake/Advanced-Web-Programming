@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Events Demo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #box {
+      width: 100px; height: 100px; background: lightblue; margin: 10px;
+    }
+    #toggleText {
+      margin: 10px; font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery Events Demo</h2>
+
+  <!-- Click & Double Click -->
+  <button id="btnClick">Click Me</button>
+  <p id="clickMsg"></p>
+  <!--empty paragraph to display a message after button click-->
+
+  <p id="dblPara">Double-click me!</p>
+
+  <!-- Mouse Events -->
+  <div id="box">Hover here</div>
+
+  <!-- Keyboard Event -->
+  <input type="text" id="nameInput" placeholder="Type your name">
+  <p id="nameOutput"></p>
+
+  <!-- Focus & Blur -->
+  <input type="text" id="emailInput" placeholder="Enter email">
+
+  <!-- Form Submit -->
+  <form id="myForm" style="margin-top:10px;">
+    <input type="text" placeholder="Type something">
+    <button type="submit">Submit</button>
+  </form>
+
+<script>
+    // Click event
+    $("#btnClick").click(function(){
+      $("#clickMsg").text("Button was clicked!");
+      //.text(...) is a jQuery function that sets the text content inside the element.
+    });
+
+    // Double-click event
+    $("#dblPara").dblclick(function(){
+      $(this).css("color", "red");
+    });
+
+    // Mouse events
+    $("#box").mouseenter(function(){
+      $(this).css("background", "green");
+    });
+    $("#box").mouseleave(function(){
+      $(this).css("background", "lightblue");
+    });
+
+    // Keyboard event
+    $("#nameInput").keyup(function(){
+      $("#nameOutput").text("You typed: " + $(this).val());//reads the current text typed in the input box.
+    });
+
+    // Focus & Blur
+    $("#emailInput").focus(function(){
+      $(this).css("background", "yellow");
+    });
+    $("#emailInput").blur(function(){
+      $(this).css("background", "white");
+    });
+
+    // Form Submit
+    $("#myForm").submit(function(event){
+      event.preventDefault(); // stop page reload
+      alert("Form submitted!");
+    });
+
+
+  </script>
+
+</body>
+</html>

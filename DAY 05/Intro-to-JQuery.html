@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Without jQuery</title>
+</head>
+<body>
+  <p id="demo">Hello</p>
+  <button onclick="changeText()">Click Me</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("demo").innerHTML = "Hello from JavaScript!";
+      //innerHTML means the content inside the HTML tag
+    }
+  </script>
+</body>
+</html>
