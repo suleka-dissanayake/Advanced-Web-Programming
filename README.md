@@ -5,8 +5,6 @@
 ![PHP](https://img.shields.io/badge/Language-PHP-purple?logo=php&logoColor=white)
 ![XAMPP](https://img.shields.io/badge/Server-XAMPP-lightgrey?logo=apache&logoColor=orange)
 ![IDE](https://img.shields.io/badge/IDE-VS%20Code-green?logo=visualstudiocode&logoColor=white)
-![GitHub](https://img.shields.io/badge/Version%20Control-GitHub-black?logo=github)
-![Status](https://img.shields.io/badge/Status-Active-success)
 
 This repository contains coursework and practical exercises developed during my **2nd Year, 1st Semester** as part of the **Bachelor of Science in Information Technology (BSc. in IT)** program at the **University of Vavuniya, Sri Lanka**.  
 It focuses on mastering **Advanced Web Programming concepts** using **HTML, CSS, and PHP**, with emphasis on dynamic websites, server-side scripting, and database integration via **XAMPP**.
